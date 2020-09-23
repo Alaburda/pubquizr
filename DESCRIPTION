@@ -15,4 +15,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 Imports:
     knitr
-        
+URL: https://github.com/Alaburda/pubquizr
+BugReports: https://github.com/Alaburda/pubquizr/issues
