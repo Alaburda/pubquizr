@@ -12,7 +12,7 @@
 #' prepare_question_base()
 
 prepare_question_base <- function(db,
-                                  n,
+                                  n = 10,
                                   include_text = TRUE,
                                   include_audio = TRUE,
                                   include_image = FALSE) {
