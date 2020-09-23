@@ -1,0 +1,93 @@
+---
+title: "Protmūšis"
+subtitle: "Pagaminta su pubquizr paketu"
+#author: "Paulius Alaburda"
+#institute: "RStudio, PBC"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      
+---
+
+class: left, center
+
+```{r setup, include = FALSE, warning = FALSE}
+
+options(htmltools.dir.version = FALSE)
+library(countdown)
+library(xaringanthemer)
+library(readr)
+library(knitr)
+library(pubquizr)
+
+knitr::opts_chunk$set(eval = TRUE, 
+                      echo = FALSE, 
+                      message = FALSE, 
+                      warning = FALSE,
+                      out.height = 400)
+
+data(pubquizr_db)
+
+
+Description <- pubquizr_db$description
+Question <- glue::glue("*{pubquizr_db$question}*")
+Answer <- pubquizr_db$answer
+Audio <- pubquizr_db$audio
+audio_start <- pubquizr_db$audio_start
+audio_end <- pubquizr_db$audio_end
+
+question_picked <- c(1,2,4)
+question_numbers <- seq(from = 1, to = length(question_picked))
+
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+style_mono_accent(
+  base_color = "#1c5253",
+  header_font_google = google_font("Roboto"),
+  text_font_google   = google_font("Roboto", "500", "500i"),
+  code_font_google   = google_font("Fira Mono"),
+  colors = c(
+  red = "#f34213",
+  purple = "#3e2f5b",
+  orange = "#ff8811",
+  green = "#136f63",
+  white = "#FFFFFF"
+)
+
+)
+
+```
+
+# Klausimai
+
+```{r, echo = FALSE, results = 'asis'}
+
+add_question(x = 1)
+
+```
+
+---
+
+```{r}
+
+countdown_fullscreen(minutes = 1, top = "0", warn_when = 15, padding = "20px 30px", margin = "5%", font_size = "1200%")
+
+```
+
+---
+
+# Atsakymai
+
+```{r Answers, echo = FALSE, results = 'asis'}
+
+add_answer(x = 1)
+
+```

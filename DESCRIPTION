@@ -1,0 +1,18 @@
+Package: pubquizr
+Title: Create pub quizzes on the fly!
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Paulius",
+           family = "Alaburda",
+           role = c("aut", "cre"),
+           email = "alaburdapaulius@gmail.com")
+Description: The pubquizr package provides functions and templates to generate 
+    web-friendly pub quiz slides to entertain your friends.
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Imports:
+    knitr
+        

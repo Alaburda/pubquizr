@@ -1,0 +1,65 @@
+---
+
+```{r, echo = FALSE}
+
+countdown::countdown(minutes = 1)
+
+
+```
+
+
+# Klausimas {{x}}
+
+```{r, warning = FALSE, echo = FALSE}
+
+description_s <- '{{db$description[[x]]}}' 
+audio_link <- '{{Audio[[x]]}}'
+audio_start_s <- '{{audio_start[[x]]}}'
+audio_end_s <- '{{audio_end[[x]]}}'
+
+
+```
+
+```{r, results = 'asis', echo = FALSE, warning = FALSE}
+
+if (description_s != "NA") {
+  cat(description_s)
+}
+
+```
+
+
+
+```{r, results = 'asis', echo = FALSE, warning = FALSE}
+
+if (audio_link != "NA") {
+
+cat(
+glue::glue('
+<div style="position:relative;width:267px;height:25px;overflow:hidden;">
+<div style="position:absolute;top:-276px;left:-5px">
+    <iframe width="300" height="300" src="{audio_link}?start={audio_start_s}&end={audio_end_s}&loop=1"></iframe>
+</div>
+</div>
+')
+)
+
+
+}
+
+#<div style="position:relative;width:267px;height:25px;overflow:hidden;">
+#  <div style="position:absolute;top:-276px;left:-5px">
+#  </div>
+#</div>
+
+```
+
+--
+
+
+.bottom[
+  .red[
+{{Question[[x]]}}
+  ]
+]
+
