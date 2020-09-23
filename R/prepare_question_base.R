@@ -6,7 +6,7 @@
 #' @param include_text Can the set contain questions with text?
 #' @param include_image Can the set contain questions with images?
 #' @param include_audio Can the set contain questions with audio?
-#' @keywords question
+#' @keywords prep
 #' @export
 #' @examples
 #' prepare_question_base()
