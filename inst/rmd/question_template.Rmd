@@ -13,9 +13,9 @@ countdown::countdown(minutes = 1)
 ```{r, warning = FALSE, echo = FALSE}
 
 description_s <- '{{db$description[[x]]}}' 
-audio_link <- '{{Audio[[x]]}}'
-audio_start_s <- '{{audio_start[[x]]}}'
-audio_end_s <- '{{audio_end[[x]]}}'
+audio_link <- '{{db$audio[[x]]}}'
+audio_start_s <- '{{db$audio_start[[x]]}}'
+audio_end_s <- '{{db$audio_end[[x]]}}'
 
 
 ```
@@ -47,11 +47,6 @@ glue::glue('
 
 }
 
-#<div style="position:relative;width:267px;height:25px;overflow:hidden;">
-#  <div style="position:absolute;top:-276px;left:-5px">
-#  </div>
-#</div>
-
 ```
 
 --
@@ -59,7 +54,7 @@ glue::glue('
 
 .bottom[
   .red[
-{{Question[[x]]}}
+{{db$question[[x]]}}
   ]
 ]
 

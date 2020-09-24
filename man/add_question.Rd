@@ -4,7 +4,7 @@
 \alias{add_question}
 \title{Add a question to your pub quiz slides}
 \usage{
-add_question(x)
+add_question(x, db = data(pubquizr_db))
 }
 \arguments{
 \item{x}{ID from a database}
