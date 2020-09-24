@@ -7,7 +7,7 @@
 #' @examples
 #' add_question()
 
-add_question <- function(x, db = data(pubquizr_db)) {
+add_question <- function(x, db) {
 
   rs <- knitr::knit_child(text = knitr::knit_expand(system.file("rmd", "question_template.Rmd", package = "pubquizr"), collapse = '\\n', quiet = TRUE), quiet = TRUE)
 

@@ -2,3 +2,4 @@
 
 export(add_answer)
 export(add_question)
+export(prepare_question_base)

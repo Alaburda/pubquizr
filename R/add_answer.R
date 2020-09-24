@@ -9,7 +9,7 @@
 #' @examples
 #' add_answer()
 
-add_answer <- function(x) {
+add_answer <- function(x, db) {
 
   rs <- knitr::knit_child(text = knitr::knit_expand(system.file("rmd", "answer_template.Rmd", package = "pubquizr"), collapse = '\\n', quiet = TRUE), quiet = TRUE)
 

@@ -25,6 +25,7 @@ library(xaringanthemer)
 library(readr)
 library(knitr)
 library(pubquizr)
+library(purrr)
 
 knitr::opts_chunk$set(eval = TRUE, 
                       echo = FALSE, 
@@ -34,16 +35,11 @@ knitr::opts_chunk$set(eval = TRUE,
 
 data(pubquizr_db)
 
-
-Description <- pubquizr_db$description
-Question <- glue::glue("*{pubquizr_db$question}*")
-Answer <- pubquizr_db$answer
-Audio <- pubquizr_db$audio
-audio_start <- pubquizr_db$audio_start
-audio_end <- pubquizr_db$audio_end
-
-question_picked <- c(1,2,4)
-question_numbers <- seq(from = 1, to = length(question_picked))
+prepared_db <- prepare_question_base(db = pubquizr_db,
+                                     n = 10,
+                                     include_text = TRUE,
+                                     include_audio = TRUE,
+                                     include_image = FALSE)
 
 ```
 
@@ -70,7 +66,7 @@ style_mono_accent(
 
 ```{r, echo = FALSE, results = 'asis'}
 
-add_question(x = 1)
+add_question(x = 1, db = prepared_db)
 
 ```
 
@@ -88,6 +84,6 @@ countdown_fullscreen(minutes = 1, top = "0", warn_when = 15, padding = "20px 30p
 
 ```{r Answers, echo = FALSE, results = 'asis'}
 
-add_answer(x = 1)
+add_answer(x = 1, db = prepared_db)
 
 ```
