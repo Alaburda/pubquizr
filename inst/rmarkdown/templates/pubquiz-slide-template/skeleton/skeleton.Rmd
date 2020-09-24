@@ -66,7 +66,9 @@ style_mono_accent(
 
 ```{r, echo = FALSE, results = 'asis'}
 
-add_question(x = 1, db = prepared_db)
+for (i in 1:10) {
+  add_question(x = i, db = prepared_db)
+}
 
 ```
 
@@ -84,6 +86,8 @@ countdown_fullscreen(minutes = 1, top = "0", warn_when = 15, padding = "20px 30p
 
 ```{r Answers, echo = FALSE, results = 'asis'}
 
-add_answer(x = 1, db = prepared_db)
+for (i in 1:10) {
+  add_answer(x = i, db = prepared_db)
+}
 
 ```
